@@ -1,0 +1,7 @@
+.jumbotron {
+    background: url("https://picsum.photos/400/200") no-repeat center;
+}
+.btn-primary {
+    background-color: black;
+    border-color: white;
+}
