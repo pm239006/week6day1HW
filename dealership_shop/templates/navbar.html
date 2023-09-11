@@ -1,21 +1,30 @@
-<nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">P's Dealership</a>
-      <button class="navbar-toggler bg-dark-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link active active link-light" aria-current="page" href="#">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="#">Used Cars</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link-light" href="#">Financing</a>
-        </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand text-white" href="/">CARSZ</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav d-flex-row">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light text-white" href="/favs">Favorite's List</a>
+      </li>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link link-light text-white" href="/logout">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link link-light text-white" href="/signin">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light text-white" href="/signup">Create an Account</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

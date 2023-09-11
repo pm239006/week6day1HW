@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="../static/css/favs.css">
+<title>Landing Page</title>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container-fluid text-center"> 
+           <h1 class="display-3">Buying, Leasing or Financing a Vehicle?</h1>
+           <p class="lead pb-4">We are here to help you make the best choice!</p>
+           <p><a href="/" class="btn btn-primary btn-lg" role="button">Explore your options</a></p>
+        </div>
+    </header>
+
+    <div class="grid text-center">
+        <div class="g-col-4"><h5>PURCHASING A VEHICLE?</h5></div>
+        <div class="g-col-4"><h5>LEASING A VEHICLE?</h5></div>
+        <div class="g-col-4"><h5>FINANCING A VEHICLE?</h5></div>
+      </div>
+
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/homepage/families-gallery/2023/revuelto/revuelto_m.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/mclaren-gt-globaltestdrive-0009-1568995044.jpg?crop=0.704xw:0.704xh;0.248xw,0.296xh&resize=980:*" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ25BNuNfU-40MzHLW7kQmI9mhCs7ucxSBC3Q&usqp=CAU" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      {% endblock content %}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+{% endfor %}
