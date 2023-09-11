@@ -53,6 +53,7 @@ class Product(db.Model):
     price = db.Column(db.Numeric(precision=10, scale=2), nullable = False)
     quantity = db.Column(db.Integer, nullable = False)
     date_added = db.Column(db.DateTime, default = datetime.utcnow)
+    prodord = db.relationship('ProdOrder', backref= 'product', lazy = True)
     #user_id = db.Column(db.String, db.ForeignKey('user.user_id'), nullable = False) #if we wanted to make a foreign key relationship
 
 

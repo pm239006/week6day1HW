@@ -43,14 +43,14 @@ def create():
 def shop():
 
     shop = Product.query.all()
-    # customers = Customer.query.all()
-    # orders = Order.query.all()
+    customers = Customer.query.all()
+    orders = Order.query.all()
 
-    # shop_stats = {
-    #     'products': len(shop),
-    #     'sales': sum([order.order_total for order in orders]), #order totals was total cost of that specific order
-    #     'customers' : len(customers)
-    # }
+    shop_stats = {
+        'cars': len(shop),
+        'sales': sum([order.order_total for order in orders]), #order totals was total cost of that specific order
+        'customers' : len(customers)
+    }
 
     return render_template('shop.html', shop=shop) #stats=shop_stats) #basically displaying our shop.html page 
 
