@@ -16,6 +16,7 @@ def signup():
     registerform = RegisterForm()
 
     if request.method == 'POST' and registerform.validate_on_submit():
+        print("something")
 
         first_name = registerform.first_name.data
         last_name = registerform.last_name.data

@@ -48,17 +48,18 @@ class Product(db.Model):
     car_model = db.Column(db.String(100), nullable = False)
     car_make = db.Column(db.String(100), nullable = False)
     car_year = db.Column(db.String(100), nullable = False)
-    image = db.Column(db.String, nullable = False)
+    image = db.Column(db.String)
     description = db.Column(db.String(200))
-    price = db.Column(db.Numeric(precision=10, scale=2), nullable = False)
+    price = db.Column(db.Numeric(precision=8, scale=2), nullable = False)
     quantity = db.Column(db.Integer, nullable = False)
     date_added = db.Column(db.DateTime, default = datetime.utcnow)
     prodord = db.relationship('ProdOrder', backref= 'product', lazy = True)
-    #user_id = db.Column(db.String, db.ForeignKey('user.user_id'), nullable = False) #if we wanted to make a foreign key relationship
+    user_id = db.Column(db.String, db.ForeignKey('user.user_id'), nullable = False) #if we wanted to make a foreign key relationship
 
 
-    def __init__(self, car_make, car_model, car_year, price, quantity, image = "", description = ""):
+    def __init__(self,user_id, car_make, car_model, car_year, price, quantity, image = "", description = ""):
         self.prod_id = self.set_id()
+        self.user_id = user_id
         self.car_make = car_make
         self.car_model = car_model
         self.car_year = car_year
@@ -70,12 +71,12 @@ class Product(db.Model):
     def set_id(self):
         return str(uuid.uuid4()) 
     
-    def set_image(self, image, car_make, car_model, car_year):
+    def set_image(self, image, car_make):
         if not image:
-            image = get_image(car_make, car_model, car_year)
+            image = get_image(car_make)
             print("api image", image)
 
-        return image
+        return self.image
     
     def decrement_quantity(self, quantity):
 
@@ -89,7 +90,7 @@ class Product(db.Model):
     
 
     def __repr__(self):
-        return f"<PRODUCT: {self.name}>"
+        return f"<PRODUCT: {self.car_make}>"
 
 
 

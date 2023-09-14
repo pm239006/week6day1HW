@@ -18,7 +18,7 @@ app.json_encoder = JSONEncoder
 jwt= JWTManager(app)
 
 login_manager.init_app(app)
-login_manager.login_view = 'auth.sign_in'
+login_manager.login_view = 'auth.signin'
 login_manager.login_message = "Hey you! Login please :)"
 login_manager.login_message_category = "warning"
 

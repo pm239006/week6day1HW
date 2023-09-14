@@ -9,7 +9,7 @@
             <h2>Welcome to your Favorite's List</h2>
             {% if current_user.is_authenticated %}
             <h5>Your cars will show up here</h5>
-            <a href="{{ url_for('site.favs' )}}" class="btn btn-outline-dark mt-3">Cars</a>
+            <a href="/favs" class="btn btn-outline-dark mt-3">Cars</a>
             {% else %}
             <h5>Please Log Into Your Account</h5>
             <a href="/signin" class="btn btn-outline-dark mt-3">Log In</a>
@@ -25,7 +25,7 @@
     <div class="col d-flex justify-content-center">Total Products: {{ stats.products }} </div>
 </div>
 <!-- Eventually our Products will show up down here! -->
-{% for product in shop %}
+ {% for product in shop %}
     <div class="row mt-5 mb-5 justify-content-center">
         <div class="card d-flex rounded shadow flex-row w-50 p-3">
             <div class="d-flex align-items-center" style="max-width:230px">
@@ -33,7 +33,9 @@
             </div>
             <div class="card-body d-flex flex-column justify-content-center p-4">
                 <h5 class="card-title">{{ product.car_make }}</h5>
-                <p class="card-text">{{ product.car_model, product.car_year }}</p>
+                <p class="card-text">{{ product.car_model}}</p>
+                <p class="card-text">{{ product.car_year }}</p>
+                <p class="card-text">{{ product.prod_id }}</p>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Price: {{ product.price }}</li>
                     <li class="list-group-item">Quantity: {{ product.quantity }}</li>

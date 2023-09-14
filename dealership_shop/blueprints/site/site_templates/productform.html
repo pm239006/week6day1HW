@@ -3,21 +3,21 @@
     <div class="col-md-12">
         {{ form.car_make.label }}
         {{form.car_make(class='form-control mt-2', placeholder = 'Honda')}}
-        {% for error in form.name.errors %}
+        {% for error in form.car_make.errors %}
             <span class="err-msg">{{ error }}</span>
         {% endfor %}
     </div>
     <div class="col-md-12">
         {{ form.car_model.label }}
         {{form.car_model(class='form-control mt-2', placeholder = 'Accord')}}
-        {% for error in form.name.errors %}
+        {% for error in form.car_model.errors %}
             <span class="err-msg">{{ error }}</span>
         {% endfor %}
     </div>
     <div class="col-md-12">
         {{ form.car_year.label }}
         {{form.car_year(class='form-control mt-2', placeholder = '2023')}}
-        {% for error in form.name.errors %}
+        {% for error in form.car_year.errors %}
             <span class="err-msg">{{ error }}</span>
         {% endfor %}
     </div>

@@ -30,3 +30,5 @@ class ProductForm(FlaskForm):
     price = DecimalField("Price", validators=[DataRequired()])
     quantity = IntegerField("Quantity", validators=[DataRequired()])
     submit = SubmitField()
+
+    
