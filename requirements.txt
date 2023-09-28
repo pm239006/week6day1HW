@@ -33,7 +33,7 @@ packaging==23.1
 platformdirs==3.10.0
 psycopg2-binary==2.9.7
 pycparser==2.21
-PyJWT==2.8.0
+PyJWT
 python-dotenv==1.0.0
 PyYAML==6.0.1
 requests==2.31.0
